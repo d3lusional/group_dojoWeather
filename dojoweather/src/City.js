@@ -18,16 +18,21 @@ class City extends Component {
 
     render() {
         console.log("text from city.js")
-        // let city = this.props.currentCity.main.temp
+        // let city = this.props.currentCity.temp
         console.log(this.props.currentCity)
         return(
             
             <div>
+              {/* {JSON.stringify (city)} */}
                 <h1>City Forecast</h1>
                     <div>
                         <ul>
-                            <li>{this.props.currentCity.main.temp}</li> 
-                           {/* <li>{this.props.currentCity.main.humidity}</li> */}
+                            <li>Temperature: {this.props.currentCity.temp}</li>
+                            {/* {this.props.currentCity.map((weather) => {
+                              return (
+                              <li>Current Conditions: {weather.description}</li>
+                            )})
+                            }  */}
                         </ul>
                         
                     </div>
