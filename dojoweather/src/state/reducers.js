@@ -1,4 +1,4 @@
-
+import {LOAD_CITY} from './types';
 
 const initialState = {
     
@@ -6,16 +6,19 @@ const initialState = {
 
     },
     cities: [
-        "Seattle,WA",
-        "San Jose, CA",
-        "Burbank, CA",
-        "Dallas, TX",
-        "Chicago, IL"
+        "Seattle",
+        "San Jose",
+        "Burbank",
+        "Dallas",
+        "Chicago"
     ],
 }
 
+
 const reducer = (state=initialState, action) => {
     switch(action.type){ 
+        case LOAD_CITY:
+            return {...state, currentCity: action.payload};
         default: 
             return state
     }
