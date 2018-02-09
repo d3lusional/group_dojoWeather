@@ -8,9 +8,18 @@ class City extends Component {
         this.props.getCityDetails(this.props.match.params.cityName);
     }
 
+    constructor (props) {
+      super(props);
+
+      // this.state= {
+      //   city: this.props.currentCity
+      // }
+    }
+
     render() {
-        console.log(this.props.currentCity)
         console.log("text from city.js")
+        // let city = this.props.currentCity.main.temp
+        console.log(this.props.currentCity)
         return(
             
             <div>
@@ -18,7 +27,7 @@ class City extends Component {
                     <div>
                         <ul>
                             <li>{this.props.currentCity.main.temp}</li> 
-                            <li>{this.props.currentCity.main.humidity}</li>
+                           {/* <li>{this.props.currentCity.main.humidity}</li> */}
                         </ul>
                         
                     </div>
@@ -27,7 +36,7 @@ class City extends Component {
         )
     }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
     return{
         currentCity: state.currentCity
     }
